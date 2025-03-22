@@ -16,7 +16,7 @@ typedef enum {
     LOAD_CONFIRM
 }load_state_t;
 
-// COnstants
+// Constants
 #define NUM_CONTAINERS 2
 #define CONTAINER_CAPACITY 6
 

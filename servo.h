@@ -11,7 +11,7 @@
 #define SERVO2_PIN   EDGE_P15
 #define SERVO3_PIN   EDGE_P16
 
-// Use an enumeration for servo channels.
+// Servo channels.
 typedef enum {
     SERVO1 = 0,
     SERVO2,
@@ -28,7 +28,7 @@ bool servo_init(void);
 /**
  * @brief Sets the specified servo to the desired angle.
  *
- * Uses your original pulse width calculation.
+ * 
  *
  * @param servo_id The servo to adjust (SERVO1, SERVO2, or SERVO3).
  * @param angle    The desired angle (0-180).
@@ -36,7 +36,7 @@ bool servo_init(void);
 void set_servo_angle(servo_channel_t servo_id, uint8_t angle);
 
 /**
- * @brief Resets the specified servo to the center (90°) position.
+ * @brief Resets the specified servo to center position.
  *
  * @param servo_id The servo to reset.
  */

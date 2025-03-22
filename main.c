@@ -42,20 +42,6 @@ static uint8_t old_minute = 0;
 
 
 
-/*
-// -----------------------------------------
-// Global variables for pill pickup tracking
-// -----------------------------------------
-volatile bool pill_waiting[NUM_CONTAINERS] = {false, false};
-volatile uint32_t pill_wait_timer[NUM_CONTAINERS] = {0, 0};
-volatile bool dispension_in_progress[NUM_CONTAINERS] = {false, false};
-volatile uint32_t dispension_confirm_timer[NUM_CONTAINERS] = {0, 0};
-
-
-#define DISPENSION_CONFIRM_TIMEOUT 5
-#define PILL_WAIT_TIMEOUT 120
-
-*/
 
 // Test functions
 //
@@ -374,6 +360,5 @@ int main(void)
 
 
   return 0;
- 
 
 };

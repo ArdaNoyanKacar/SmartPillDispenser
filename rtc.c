@@ -32,7 +32,7 @@ rtc_time_t start_time = {
 
 
 // Initialize the DS3231 RTC Module
-// It will return a false if the I2C manager has not been set
+// Return a false if the I2C manager has not been set
 bool rtc_init(void)
 {
     rtc_set(&start_time);

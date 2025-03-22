@@ -26,7 +26,7 @@ uint16_t servo_angle[] = {0, 0};
 
 
 // Global variables for system-level tracking:
-static uint8_t current_day_of_week = 3;  // Assume RTC is set with day-of-week = 1 (e.g., Monday).
+static uint8_t current_day_of_week = 3;  
 static uint8_t last_rtc_day = 0;
 
 
@@ -50,8 +50,7 @@ void ir_sensor_callback(uint8_t sensor_id, ir_event_t event)
 
 
 
-//----------------------------------------------------------------------
-// dispenser_init()
+
 // Initializes all peripherals and drivers.
 bool dispenser_init(void)
 {
@@ -144,8 +143,7 @@ bool dispenser_init(void)
     return true;
 }
 
-//----------------------------------------------------------------------
-// update_day_of_week()
+
 // Called each loop to check if the RTC day has changed. If so, update
 // the global current_day_of_week and reset the dispensed flags in the schedule.
 void update_day_of_week(const rtc_time_t *current_time)
@@ -162,8 +160,7 @@ void update_day_of_week(const rtc_time_t *current_time)
     }
 }
 
-//----------------------------------------------------------------------
-// dispense()
+
 // A helper function that triggers the servo to dispense pills.
 // Here we simply set the servo angle based on the pill type and amount.
 void dispense(uint8_t pill_type, uint8_t amount)
@@ -194,8 +191,7 @@ void dispense(uint8_t pill_type, uint8_t amount)
     }
 }
 
-//----------------------------------------------------------------------
-// check_pill_dispense_schedule()
+
 // Checks the dispensing schedule against the current time and triggers dispensing events.
 void check_pill_dispense_schedule(const rtc_time_t *current_time)
 {
@@ -244,8 +240,7 @@ void check_pill_dispense_schedule(const rtc_time_t *current_time)
     }
 }
 
-//----------------------------------------------------------------------
-// update_dispense_and_pickup_timers()
+
 // Updates the timers for confirming a dispense and for waiting for a pill pickup.
 void update_dispense_and_pickup_timers(void)
 {
@@ -302,8 +297,7 @@ void update_dispense_and_pickup_timers(void)
     }
 }
 
-//----------------------------------------------------------------------
-// update_display_info()
+
 // Updates the status display in Normal mode.
 void update_display_info(const rtc_time_t *current_time, float temperature, float humidity)
 {

@@ -51,10 +51,10 @@ static uint8_t add_amount = 1;
 // Global option for top-level Add/Remove: 0 = Add, 1 = Remove.
 static uint8_t option = 0;
 
-//-----------------------------------------------------------------------------
+//
 // show_config_page()
-// This function displays the current configuration screen based on the state.
-//-----------------------------------------------------------------------------
+//
+// TDisplaysdisplays the current configuration screen based on the state.
 static void show_config_page(config_state_t state)
 {
     char buf[128];
@@ -108,10 +108,10 @@ static void show_config_page(config_state_t state)
     display_text(buf);
 }
 
-//-----------------------------------------------------------------------------
-// configuration_mode()
+
+// configuration_mode
+//
 // Implements the configuration state machine for both adding and removing dispensions.
-//-----------------------------------------------------------------------------
 void configuration_mode(void)
 {
     config_state_t state = CONFIG_ADD_REMOVE;
@@ -143,8 +143,7 @@ void configuration_mode(void)
         // Update the display.
         show_config_page(state);
 
-        // Poll for button events.
-        //button_event = button_poll();
+        
         button_event = button_get();
 
         if (button_event != BUTTON_NONE)

@@ -6,7 +6,6 @@
 #include "font8x8_basic.h"  // This header should define font8x8_basic_tr
 
 // SSD1306 initialization command sequence for a 128×64 display.
-// This sequence is based on typical SSD1306 datasheet recommendations.
 static const uint8_t ssd1306_init_cmds[] = {
     0xAE,             // Display off
     0xD5, 0x80,       // Set display clock divide ratio/oscillator frequency
@@ -29,7 +28,7 @@ static const uint8_t ssd1306_init_cmds[] = {
 /*
  * display_write_block
  *
- * Helper: Write a block of bytes to the display.
+ * Write a block of bytes to the display.
  * It builds a temporary buffer consisting of the control byte (either command or data)
  * followed by the data, and sends it in one I²C transaction.
  */
@@ -45,7 +44,7 @@ static ret_code_t display_write_block(uint8_t control, const uint8_t *data, uint
  * display_init
  *
  * Initialize the SSD1306 display by sending the full initialization sequence.
- * This is done in a single I²C transaction.
+ * 
  */
 bool display_init(void)
 {
@@ -65,7 +64,7 @@ bool display_init(void)
 /*
  * display_turn_on
  *
- * For testing: Sends only the "display on" command (0xAF).
+ * Send only the "display on" command (0xAF).
  */
 bool display_turn_on(void)
 {
@@ -96,8 +95,7 @@ void display_set_start_line(uint_fast8_t start_line)
  * display_reset_addressing
  *
  * Resets column and page addressing.
- * Sends commands to set the lower column address to 0, higher column address to 0,
- * and the page address (0xB0 | page).
+ * 
  */
 static void display_reset_addressing(uint8_t page)
 {
@@ -118,7 +116,6 @@ static void display_reset_addressing(uint8_t page)
  * display_clear
  *
  * Clears the display by writing zeros to every pixel.
- * Assumes a 128×64 display organized in 8 pages (each 128 columns).
  */
 void display_clear(void)
 {

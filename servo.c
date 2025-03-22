@@ -40,11 +40,9 @@ static bool multi_servo_init(void)
 }
 
 /**
- * @brief Original pulse width calculation.
+ * @brief Calculate pulse width needed for motor and angle
  *
- * For SERVO1: pulse = 440 + ((angle * 2010) / 180)
- * For SERVO2: pulse = 340 + ((angle * 2010) / 180)
- * For others, default to SERVO1 calculation.
+ * 
  */
 static uint16_t calc_pulse(servo_channel_t motor_id, uint8_t angle)
 {
@@ -73,20 +71,19 @@ bool servo_init(void)
     // Reset all servos to 0° initially.
     set_servo_angle(SERVO1, 0);
     set_servo_angle(SERVO2, 0);
-    set_servo_angle(SERVO3, 0);
     return success;
 }
 
 /**
  * @brief Set the specified servo to the desired angle.
  *
- * Uses the original calc_pulse() for pulse width calculation.
+ * Uses calc_pulse() for pulse width calculation.
  * The PWM register value is computed as (top_value - pulse_width).
  */
 void set_servo_angle(servo_channel_t servo_id, uint8_t angle)
 {
     uint16_t pulse_width = calc_pulse(servo_id, angle);
-    // For our PWM instance, top_value is 20000.
+    // Top_value is 20000.
     uint16_t pwm_val = 20000 - pulse_width;
 
     switch (servo_id)
@@ -110,7 +107,7 @@ void set_servo_angle(servo_channel_t servo_id, uint8_t angle)
 }
 
 /**
- * @brief Reset the specified servo to the center (90°) position.
+ * @brief Reset the specified servo to the centerposition.
  */
 void servo_reset(servo_channel_t servo_id)
 {

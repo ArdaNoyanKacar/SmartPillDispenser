@@ -8,6 +8,7 @@
 uint8_t num_dispensions = 0;
 dispension_t dispension_schedule[MAX_DISPENSIONS];
 
+// Add a dispension to the schedule
 bool dispension_add(dispension_t new_dispension)
 {
     if (num_dispensions >= MAX_DISPENSIONS)
@@ -30,7 +31,7 @@ bool dispension_add(dispension_t new_dispension)
     return true;
 }
 
-
+// Remove a dispension from the schedule
 bool dispension_remove(uint8_t index)
 {
     if (index >= num_dispensions)

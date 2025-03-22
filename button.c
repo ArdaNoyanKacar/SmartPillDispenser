@@ -13,7 +13,10 @@
 #define CONFIRM_BUTTON_PIN   EDGE_P6   // Example pin for Confirm button
 
 volatile button_event_t latest_button = BUTTON_NONE;
-
+/// OLD
+/// OLD
+/// OLD
+// NO LONGER USED
 // Initialize all button pins as inputs with pull-up resistors.
 void button_init(void)
 {
@@ -24,7 +27,7 @@ void button_init(void)
     nrf_gpio_cfg_input(CONFIRM_BUTTON_PIN, NRF_GPIO_PIN_PULLUP);
 }
 
-
+// Interrupt handler for button actions
 static void button_interrupt_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
 
@@ -51,6 +54,11 @@ static void button_interrupt_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_
         latest_button = BUTTON_CONFIRM;
 }
 
+
+// Initialize buttons with interrupts
+// NEW
+// NEW
+// NEW
 void button_interrupt_init(void)
 {
     ret_code_t err;

@@ -5,7 +5,6 @@
 #include <stdint.h>
 
 // SSD1306 I²C address for a 128×64 OLED display.
-// (Some modules use 0x3D; adjust if necessary.)
 #define SSD1306_ADDR          0x3C
 
 // Control byte definitions.
