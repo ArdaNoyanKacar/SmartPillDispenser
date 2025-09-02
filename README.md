@@ -14,7 +14,6 @@ An embedded system based on the Nordic nRF52 microcontroller for automated pill 
 
 ![Smart Pill Dispenser](https://github.com/ArdaNoyanKacar/SmartPillDispenser/blob/d522cff688bb0918b30d228c45abe21a64b7c3f1/Pill%20Dispenser.jpg)
 
-*(Prototype image – replace with the correct relative path to your picture file)*
 
 ---
 
