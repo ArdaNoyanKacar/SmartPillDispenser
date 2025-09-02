@@ -1,18 +1,20 @@
-# Smart Pill Dispenser 
-Arda Noyan Kacar - Carmine Bastone
+# Smart Pill Dispenser  
+
+**Contributors:**  
+- Arda Noyan Kacar  
+- Carmine Bastone  
+
+---
 
 An embedded system based on the Nordic nRF52 microcontroller for automated pill scheduling, dispensing, and consumption tracking. The device integrates multiple sensors, an RTC for scheduling, and a servo mechanism for dispensing, with an FSM-based control architecture and real-time user feedback.
 
 ---
 
-## Features
+## Project Overview
 
-- **RTC-based weekly scheduling** for timed dispensing events  
-- **IR, temperature, and humidity sensors** for environment and dispense monitoring  
-- **Servo-driven mechanism** capable of dispensing combinations of up to 4 pill types  
-- **FSM-based control system** for reliable state management and error handling  
-- **Pill consumption detection** integrated into the control logic  
-- **OLED and buzzer alerts** providing immediate feedback after each dispense or failure  
+![Smart Pill Dispenser Prototype](docs/images/dispenser.jpg)
+
+*(Prototype image – replace with the correct relative path to your picture file)*
 
 ---
 
