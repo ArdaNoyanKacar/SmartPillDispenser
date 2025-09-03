@@ -3,7 +3,7 @@
 
 - **Arda Noyan Kacar**  
 - **Carmine Bastone**
-- 
+   
 An embedded, on-device system for **weekly medication scheduling, dispensing, and verification**. Runs on a Nordic **nRF52** MCU with **IR pill detection**, **temperature/humidity monitoring**, **RTC-based scheduling**, an **OLED UI**, a **buzzer**, and a **servo** mechanism for dispensing.
 
 ![Device](./Pill%20Dispenser.jpg)
